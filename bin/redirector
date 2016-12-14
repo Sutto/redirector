@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# require 'redirector'
+require 'thor'
+
+class RedirectorCLI < Thor
+
+  desc "sync DESTINATION_URI MANIFEST_PATH", "syncs URLs in the manifest path to the destination path."
+  method_options dry_run: :boolean, log_path: :string
+  def sync(destination_uri, manifest_path)
+    p [destination_uri, manifest_path, options]
+  end
+
+end
+
+RedirectorCLI.start
